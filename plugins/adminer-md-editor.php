@@ -1,13 +1,8 @@
 <?php
 
 class AdminerEditMarkdown {
-	/** @access protected */
 	var $prepend;
 
-	/**
-	* @param string text to append before first calendar usage
-	* @param string path to language file, %s stands for language code
-	*/
 	function AdminerEditMarkdown() {
 		$this->prepend = '
 <script src="md-editor/marked.js"></script>
@@ -142,7 +137,9 @@ function initMD()
 	}
 
 	function editInput($table, $field, $attrs, $value) {
+		// Fields names for markdown editing.
 		$markdownFields = array('PostData');
+
 		if (in_array($field['field'], $markdownFields) )
 		{
 			return "
